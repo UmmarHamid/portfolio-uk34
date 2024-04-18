@@ -1,19 +1,19 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import "./globals.css";
-import "../styles/style.css";
-import "../styles/blue.css";
-import "../styles/theme.css";
-import Sidebar from "@/components/sidebar/sidebar";
-import Providers from "./providers";
-import ThemeSwitch from "@/components/panel/ThemeSwitch";
+import ThemeSwitch from '@/components/panel/ThemeSwitch';
+import Sidebar from '@/components/sidebar/sidebar';
+import { Analytics } from '@vercel/analytics/react';
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import '../styles/blue.css';
+import '../styles/style.css';
+import '../styles/theme.css';
+import './globals.css';
+import Providers from './providers';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "urFolio - Portfolio web",
-  description: "urFolio - a Open Source portfolio web application",
+  title: 'urFolio - Portfolio web',
+  description: 'urFolio - a Open Source portfolio web application',
 };
 
 export default function RootLayout({
@@ -22,7 +22,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en'>
       <body className={inter.className}>
         <Providers>
           <ThemeSwitch />

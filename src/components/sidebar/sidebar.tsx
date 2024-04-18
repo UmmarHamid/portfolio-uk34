@@ -1,13 +1,10 @@
 'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 const Sidebar = () => {
   const [open, setOpen] = useState(false);
-
   const handleOpen = () => {
     setOpen(!open);
   };
@@ -15,7 +12,15 @@ const Sidebar = () => {
     setOpen(false);
   };
 
-  const pathUrl = usePathname();
+  const onPress = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
+    e.preventDefault();
+    const target = window.document.getElementById(
+      e.currentTarget.href.split('#')[1]
+    );
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <aside className={`aside ${open ? 'open' : ''}`}>
@@ -35,43 +40,59 @@ const Sidebar = () => {
         </div>
         <ul className='nav'>
           <li onClick={handleClose}>
-            <Link href='/' className={`${pathUrl == '/' && 'active'}`}>
+            <Link
+              href='#home-section-anchor'
+              data-to-scrollspy-id='home-section-anchor'
+              onClick={(e) => onPress(e)}
+            >
               <i className='fa fa-home' /> Home
             </Link>
           </li>
           <li onClick={handleClose}>
             <Link
-              href='/about'
-              className={`${pathUrl == '/about' && 'active'}`}
+              href='#red'
+              // data-to-scrollspy-id='about-section-anchor'
+              onClick={(e) => onPress(e)}
             >
-              <i className='fa fa-user' /> About
+              <span data-to-scrollspy-id='red'>
+                <i className='fa fa-user' /> About
+              </span>
             </Link>
           </li>
           <li onClick={handleClose}>
             <Link
-              href='/services'
-              className={`${pathUrl == '/services' && 'active'}`}
+              href='#services-section-anchor'
+              data-to-scrollspy-id='services-section-anchor'
+              onClick={(e) => onPress(e)}
+              // className={`${pathUrl == '/services' && 'active'}`}
+              // className='active-scroll-spy'
             >
               <i className='fa fa-list' /> Services
             </Link>
           </li>
           <li onClick={handleClose}>
             <Link
-              href='/portfolio'
-              className={`${pathUrl == '/portfolio' && 'active'}`}
+              href='#portfolio-section-anchor'
+              data-to-scrollspy-id='portfolio-section-anchor'
+              onClick={(e) => onPress(e)}
             >
               <i className='fa fa-briefcase' /> Portfolio
             </Link>
           </li>
           <li onClick={handleClose}>
-            <Link href='/blog' className={`${pathUrl == '/blog' && 'active'}`}>
+            <Link
+              href='#blog-section-anchor'
+              data-to-scrollspy-id='blog-section-anchor'
+              onClick={(e) => onPress(e)}
+            >
               <i className='fa fa-envelope' /> Blog
             </Link>
           </li>
           <li onClick={handleClose}>
             <Link
-              href='/contact'
-              className={`${pathUrl == '/contact' && 'active'}`}
+              href='#contact-section-anchor'
+              data-to-scrollspy-id='contact-section-anchor'
+              onClick={(e) => onPress(e)}
             >
               <i className='fa fa-comments' /> Contact
             </Link>
