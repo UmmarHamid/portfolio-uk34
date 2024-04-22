@@ -1,4 +1,4 @@
-import { USERNAME } from '@/constants';
+import { USEREXPERTISE, USERNAME } from '@/constants';
 import type { NextPage } from 'next';
 import Image from 'next/image';
 
@@ -15,21 +15,21 @@ const Home: NextPage = () => {
             className='shadow-dark profile-photo'
           />
           <h1>{USERNAME}</h1>
-          <p>Your expertise</p>
+          <p>{USEREXPERTISE}</p>
           <div className='social-links'>
-            <a href='https://twitter.com/' target='_blank'>
+            {/* <a href='https://twitter.com/' target='_blank'>
               <i className='fa fa-twitter' />
-            </a>
-            <a href='https://facebook.com/' target='_blank'>
+            </a> */}
+            {/* <a href='https://facebook.com/' target='_blank'>
               <i className='fa fa-facebook' />
-            </a>
-            <a href='https://github.com/' target='_blank'>
+            </a> */}
+            <a href='https://github.com/ummarHamid' target='_blank'>
               <i className='fa fa-github' />
             </a>
-            <a href='https://instagram.com/' target='_blank'>
+            {/* <a href='https://instagram.com/' target='_blank'>
               <i className='fa fa-instagram' />
-            </a>
-            <a href='https://linkedin.com/in/' target='_blank'>
+            </a> */}
+            <a href='https://www.linkedin.com/in/ummar34/' target='_blank'>
               <i className='fa fa-linkedin' />
             </a>
           </div>

@@ -1,6 +1,14 @@
+import { USEREXPERTISE, USERNAME } from '@/constants';
 import type { NextPage } from 'next';
 
 const About: NextPage = () => {
+  var workStartDate = new Date('2019-08-01');
+  var currentDate = new Date();
+  const difference = currentDate.getTime() - workStartDate.getTime();
+
+  // Convert milliseconds to years
+  var millisecondsInYear = 1000 * 60 * 60 * 24 * 365.25; // accounting for leap years
+  var workYears = Math.floor(difference / millisecondsInYear);
   return (
     <section className='about section' id='red'>
       <div className='container'>
@@ -14,14 +22,23 @@ const About: NextPage = () => {
             <div className='row'>
               <div className='about-text padd-15'>
                 <h2>
-                  I am Your name a <span>Your Expertise</span>
+                  {`I am ${USERNAME} `}
+                  <span>{USEREXPERTISE}</span>
                 </h2>
                 <p>
-                  Hi! My name is Your Name. I am a your expertise, and I am very
-                  passionate and dedicated to my work. With 1 years experience
-                  as a your expertise, I have acquired the skills and knowledge
-                  necessary to make your project a success. I enjoy every step
-                  of the design process, from discussion and collaboration.
+                  {`As a software engineer, I have been building solutions that
+                  have impacted millions of users and I primarily focus on
+                  Frontend technologies at work. I have ${workYears}+ years of experience
+                  in building professional websites and front-end applications.
+                  During my career, I got to work with amazing people and brands
+                  like LifeRamp, MAZWorld, East West Centre, Wildstyle, Truevet
+                  Animal Nutrition,Redaptive and many more. I feel obligated to build
+                  front-end interfaces of supreme quality. I love the javascript
+                  ecosystem and I have designed & developed multiple products in
+                  my career. I have worked with E-commerce, EdTech & NonProfits.
+                  I have hands-on experience in Javascript, React, React Native,
+                  HTML5/CSS, Drupal Frontend, Twig, and much more. I can be a
+                  super valuable member of your team. Let's connect, Ummar`}
                 </p>
               </div>
             </div>
@@ -30,27 +47,27 @@ const About: NextPage = () => {
                 <div className='row'>
                   <div className='info-item padd-15'>
                     <p>
-                      Website : <span>www.urfolio.vercel.app</span>
+                      Website : <span>www.mysiteurl.vercel.app</span>
                     </p>
                   </div>
                   <div className='info-item padd-15'>
                     <p>
-                      Email : <span>your@email.com</span>
+                      Email : <span>kaxama34@email.com</span>
                     </p>
                   </div>
                   <div className='info-item padd-15'>
                     <p>
-                      Degree : <span>SSC</span>
+                      Degree : <span>Btech CSE</span>
                     </p>
                   </div>
                   <div className='info-item padd-15'>
                     <p>
-                      Phone : <span>+99 ********</span>
+                      Phone : <span>+91 7006138763</span>
                     </p>
                   </div>
                   <div className='info-item padd-15'>
                     <p>
-                      City : <span>Your City</span>
+                      City : <span>Srinagar</span>
                     </p>
                   </div>
                   <div className='info-item padd-15'>
@@ -62,14 +79,14 @@ const About: NextPage = () => {
                 <div className='row'>
                   <div className='buttons padd-15'>
                     <a
-                      href='/assets/docs/resume.pdf'
+                      href='https://drive.google.com/file/d/10smHA57KTzXimDlFDTDJyhtUxhvxKd0G/view?usp=drive_link'
                       target='_target'
                       className='btn'
                     >
                       Download CV
                     </a>
                     <a
-                      href='#contact'
+                      href='#contact-section-anchor'
                       data-section-index={0}
                       className='btn hire-me'
                     >
@@ -81,31 +98,45 @@ const About: NextPage = () => {
               <div className='skills padd-15'>
                 <div className='row'>
                   <div className='skill-item padd-15'>
-                    <h5>Html5</h5>
+                    <h5>HTML</h5>
                     <div className='progress'>
-                      <div className='progress-in' style={{ width: '80%' }} />
-                      <div className='skill-percent'>80%</div>
+                      <div className='progress-in' style={{ width: '100%' }} />
+                      <div className='skill-percent'>100%</div>
                     </div>
                   </div>
                   <div className='skill-item padd-15'>
-                    <h5>Css3</h5>
+                    <h5>CSS</h5>
                     <div className='progress'>
-                      <div className='progress-in' style={{ width: '60%' }} />
-                      <div className='skill-percent'>60%</div>
+                      <div className='progress-in' style={{ width: '100%' }} />
+                      <div className='skill-percent'>100%</div>
                     </div>
                   </div>
                   <div className='skill-item padd-15'>
                     <h5>Javascript</h5>
                     <div className='progress'>
-                      <div className='progress-in' style={{ width: '50%' }} />
-                      <div className='skill-percent'>50%</div>
+                      <div className='progress-in' style={{ width: '100%' }} />
+                      <div className='skill-percent'>100%</div>
                     </div>
                   </div>
                   <div className='skill-item padd-15'>
-                    <h5>Bootstrap</h5>
+                    <h5>React</h5>
                     <div className='progress'>
-                      <div className='progress-in' style={{ width: '70%' }} />
-                      <div className='skill-percent'>70%</div>
+                      <div className='progress-in' style={{ width: '100%' }} />
+                      <div className='skill-percent'>100%</div>
+                    </div>
+                  </div>
+                  <div className='skill-item padd-15'>
+                    <h5>Tailwind</h5>
+                    <div className='progress'>
+                      <div className='progress-in' style={{ width: '100%' }} />
+                      <div className='skill-percent'>100%</div>
+                    </div>
+                  </div>
+                  <div className='skill-item padd-15'>
+                    <h5>Next.js</h5>
+                    <div className='progress'>
+                      <div className='progress-in' style={{ width: '90%' }} />
+                      <div className='skill-percent'>90%</div>
                     </div>
                   </div>
                 </div>
@@ -163,6 +194,7 @@ const About: NextPage = () => {
                           4.56. My school name was Patgram Anath Bondhu Govt.
                           High School.
                         </p>
+                        {/* TODO: Add details for main edu, certificates etc all meaning ALL */}
                       </div>
                       {/* Timeline Item end */}
                     </div>
